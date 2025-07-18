@@ -1,133 +1,147 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-ber=400    <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Morgan Sandler's Personal Page</title>
+    <title>Morgan Sandler</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f4f4f4;
-        }
-        .container {
-            max-width: 800px;
-            margin: 20px auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
-        }
-        h1, h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
             color: #333;
-            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #fafafa;
         }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background-color: #333;
-            color: white;
-            position: relative;
-            bottom: 0;
-            width: 100%;
+        
+        .container {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
-        nav {
-            text-align: center;
+        
+        h1 {
+            color: #2c3e50;
+            border-bottom: 3px solid #3498db;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            font-weight: 300;
+        }
+        
+        .bio {
+            font-size: 1.1em;
+            margin-bottom: 40px;
+            text-align: justify;
+        }
+        
+        .research-section {
+            margin-top: 40px;
+        }
+        
+        .research-section h2 {
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
             margin-bottom: 20px;
         }
-        nav a {
-            margin: 0 10px;
-            color: #333;
-            text-decoration: none;
+        
+        .research-area {
+            margin-bottom: 25px;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #3498db;
         }
-        nav a:hover {
+        
+        .research-area h3 {
+            color: #2c3e50;
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+        
+        .research-area p {
+            margin-bottom: 0;
+            color: #555;
+        }
+        
+        .links {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        
+        .links a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 20px;
+            font-weight: 500;
+        }
+        
+        .links a:hover {
             text-decoration: underline;
+        }
+        
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            
+            body {
+                padding: 10px;
+            }
         }
     </style>
 </head>
 <body>
-
-<div class="container">
-    <h1>Morgan Sandler</h1>
-    <p>AI Policy, Defense, and Machine Learning Researcher</p>
-    <p>Focused on ethical AI, AI alignment, and human-centric algorithms</p>
-    
-    <nav>
-        <a href="#about">About Me</a> | 
-        <a href="#research">Research</a> | 
-        <a href="#publications">Publications</a>
-    </nav>
-
-    <section id="about">
-        <h2>About Me</h2>
-        <p>I am a computer scientist and a technical analyst at RAND, specializing in AI policy, ethical alignment, and defense research. My work is interdisciplinary, bridging cognitive science, computer science, philosophy, and public policy to ensure that AI systems align with human values, particularly in defense and homeland security contexts. I hold an M.Sc. in Computer Science from Michigan State University, where I focused on <a href="https://www.proquest.com/openview/4039c9ea16a4676bcb5b8ec924edef6f/1">speaker recognition</a> (biometrics), and am currently pursuing a Ph.D. in Computer Science (Artificial Intelligence) supervised by Professor <a href="https://rossarun.wixsite.com/arun-ross">Arun Ross</a>. View my full profile and research on my <a href="https://www.rand.org/about/people/s/sandler_morgan.html">RAND page</a> or visit my <a href="https://scholar.google.com/citations?user=HayqWsIAAAAJ&hl=en">Google Scholar profile</a>.</p>
-    </section>
-
-    <section id="research">
-        <h2>Research</h2>
-        <p><strong>Compassionate Computing:</strong> Exploring how large language models can exhibit empathy and prosocial behaviors to improve human-AI collaboration in diverse settings, from education to defense.</p>
-        <p><strong>Ethical Measurement in LLMs:</strong> Developing quantitative and qualitative frameworks to assess and enhance ethical behaviors in language models.</p>
-        <p><strong>Trust in AI for Defense:</strong> Investigating metrics to evaluate warfighter trust in AI systems, including novel trust metrics and risk aversion analysis, targeted at DOD stakeholders.</p>
-        <p><strong>Nation-State Competitive Analysis:</strong> Constructing frameworks to assess global science and technology capabilities, focusing on drivers of change, metrics, and data sources for competitive analysis.</p>
-        <p><strong>LLMs and Legal Compliance:</strong> Examining the extent to which large language models can recognize and adhere to U.S. laws, including challenges in interpreting legal requirements, identifying restricted actions, and understanding compliance contexts.</p>
-
-    </section>
-
-    <section id="publications">
-        <h2>Selected Publications</h2>
-
-	<ul>
-    <li>
-        <a href="https://www.rand.org/pubs/research_reports/RRA2990-1.html">
-            <strong>Mitigating Risks at the Intersection of Artificial Intelligence and Chemical and Biological Weapons</strong>
-        </a>
-        <br>
-        <span style="font-size: 0.9em; color: gray;">
-            Luckey, David, Sara Duhachek Muggy, Taylor Frey, David Stebbins, Tracey Rissman, Bianca Espinosa,
-            Daniel Tapia, Greg McKelvey, Jr., Neeti Pokhriyal, Joseph Dawson, Sara Hughes, 
-            <strong>Morgan Sandler</strong>, et al. <br>
-            Homeland Security Operational Analysis Center operated by the RAND Corporation, RR-A2990-1, 2025.
-        </span>
-    </li>
-
-    <li>
-        <a href="https://arxiv.org/abs/2401.16587">
-            <strong>A Linguistic Comparison between Human and LLM-Generated Conversations</strong>
-        </a>
-        <br>
-        <span style="font-size: 0.9em; color: gray;">
-            <strong>M. Sandler</strong>, H. Choung, A. Ross, and P. David. ICPRAI, 2024.
-        </span>
-    </li>
-
-    <li>
-        <a href="https://www.rand.org/pubs/perspectives/PEA3414-1.html">
-            <strong>Navigating the AI Landscape: Choosing the Right Tool for the Job</strong>
-        </a>
-        <br>
-        <span style="font-size: 0.9em; color: gray;">
-            O. Pathak, <strong>M. Sandler</strong>, J. Vahedi, and K. Hyde. RAND Corporation, 2024.
-        </span>
-    </li>
-
-    <li>
-        <a href="https://ieeexplore.ieee.org/abstract/document/10449091">
-            <strong>Vocal Style Factorization for Effective Speaker Recognition in Affective Scenarios</strong>
-        </a>
-        <br>
-        <span style="font-size: 0.9em; color: gray;">
-            <strong>M. Sandler</strong> and A. Ross. IJCB, 2023.
-        </span>
-    </li>
-</ul>
-
-    
-    </section>
-</div>
-
-<footer>
-    <p>Contact: <a href="mailto:msandler@rand.org">msandler@rand.org</a> | <a href="mailto:sandle20@msu.edu">sandle20@msu.edu</a></p>
-</footer>
-
+    <div class="container">
+        <h1>Morgan Sandler</h1>
+        <div class="subtitle">Technical Research Staff @ RAND | Computer Science Ph.D. Student @ MSU</div>
+        
+        <div class="bio">
+            <p>Morgan Sandler is a Technical Policy Analyst in RAND Corporation's Engineering and Applied Sciences Department, specializing in science and technology policy and national security applications. His research spans chemical and biological threat mitigation, AI-enabled non-proliferation analysis, nation-state technology competition on connected and autonomous vehicles, responsible AI use in high-conflict scenarios, biosecurity risk assessment, and benchmarking LLM legal reasoning abilities.</p>
+            
+            <p>Currently pursuing a Ph.D. in Computer Science at Michigan State University, Sandler develops methodological approaches for emotion-aware LLMs with enhanced theory of mind capabilities. His doctoral research includes comparative analyses of human versus LLM-generated empathic conversations and pioneering work in affective computing applications.</p>
+            
+            <p>Sandler bridges rigorous policy analysis with cutting-edge AI research to address both technical possibilities and societal implications of emerging technologies in national security contexts.</p>
+        </div>
+        
+        <div class="research-section">
+            <h2>Research Areas</h2>
+            
+            <div class="research-area">
+                <h3>Emotion-Aware AI & Theory of Mind</h3>
+                <p>Developing methodological approaches for creating LLMs with enhanced theory of mind capabilities that can accurately perceive and respond to human emotional cues. Research includes comparative analyses of human versus LLM-generated empathic conversations and advancing affective computing applications.</p>
+            </div>
+            
+            <div class="research-area">
+                <h3>AI Policy & National Security</h3>
+                <p>Conducting policy analysis on AI applications in defense and homeland security contexts, including responsible AI use in high-conflict scenarios, chemical and biological threat mitigation, and AI-enabled non-proliferation analysis.</p>
+            </div>
+            
+            <div class="research-area">
+                <h3>Technology Competition Analysis</h3>
+                <p>Analyzing nation-state science and technology competition, particularly focusing on connected and autonomous vehicles, and developing frameworks to assess global technological capabilities and competitive dynamics.</p>
+            </div>
+            
+            <div class="research-area">
+                <h3>AI Risk Assessment</h3>
+                <p>Evaluating biosecurity risks posed by AI systems and benchmarking large language model capabilities in legal reasoning and compliance contexts.</p>
+            </div>
+        </div>
+        
+        <div class="links">
+            <a href="https://www.rand.org/about/people/s/sandler_morgan.html" target="_blank">RAND Profile</a>
+            <a href="https://scholar.google.com/citations?user=HayqWsIAAAAJ&hl=en" target="_blank">Google Scholar</a>
+            <a href="https://www.linkedin.com/in/morgan-sandler/" target="_blank">LinkedIn</a>
+        </div>
+    </div>
 </body>
 </html>
