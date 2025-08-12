@@ -8,80 +8,60 @@
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
-            background-color: #fafafa;
+            padding: 40px 20px;
+            color: #333;
+            background-color: #fff;
         }
         
-        .container {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eee;
         }
         
         h1 {
-            color: #2c3e50;
-            border-bottom: 3px solid #3498db;
-            padding-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 300;
             margin-bottom: 10px;
+            color: #2c3e50;
         }
         
         .subtitle {
-            color: #7f8c8d;
             font-size: 1.2em;
-            margin-bottom: 30px;
-            font-weight: 300;
-        }
-        
-        .bio {
-            font-size: 1.1em;
-            margin-bottom: 40px;
-            text-align: justify;
-        }
-        
-        .research-section {
-            margin-top: 40px;
-        }
-        
-        .research-section h2 {
-            color: #2c3e50;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
+            color: #7f8c8d;
             margin-bottom: 20px;
         }
         
-        .research-area {
-            margin-bottom: 25px;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #3498db;
+        .section {
+            margin-bottom: 40px;
         }
         
-        .research-area h3 {
-            color: #2c3e50;
-            margin-top: 0;
-            margin-bottom: 10px;
+        h2 {
+            font-size: 1.5em;
+            font-weight: 400;
+            color: #34495e;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
         }
         
-        .research-area p {
-            margin-bottom: 0;
-            color: #555;
+        p {
+            margin-bottom: 15px;
+            font-size: 1.1em;
         }
         
         .links {
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #eee;
+            text-align: center;
+            margin-top: 30px;
         }
         
         .links a {
             color: #3498db;
             text-decoration: none;
-            margin-right: 20px;
+            margin: 0 15px;
             font-weight: 500;
         }
         
@@ -89,59 +69,68 @@
             text-decoration: underline;
         }
         
+        .work-list {
+            margin-left: 20px;
+        }
+        
+        .work-list li {
+            margin-bottom: 8px;
+            font-size: 1.05em;
+        }
+        
         @media (max-width: 600px) {
-            .container {
-                padding: 20px;
+            body {
+                padding: 20px 15px;
             }
             
-            body {
-                padding: 10px;
+            h1 {
+                font-size: 2em;
+            }
+            
+            .links a {
+                display: block;
+                margin: 10px 0;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
+    <div class="header">
         <h1>Morgan Sandler</h1>
-        <div class="subtitle">Technical Research Staff @ RAND | AI/ML Ph.D. Student @ MSU</div>
+        <div class="subtitle">Policy Analyst & Computer Science PhD Student</div>
+    </div>
+
+    <div class="section">
+        <h2>About</h2>
+        <p>I'm a policy analyst at RAND Corporation where I research technology and national security topics. I also work on reports about AI policy, biosecurity, and emerging technologies.</p>
         
-        <div class="bio">
-            <p>Morgan Sandler is a Technical Policy Analyst in RAND Corporation's Engineering and Applied Sciences Department, specializing in science and technology policy and national security applications. His research spans chemical and biological threat mitigation, AI-enabled non-proliferation analysis, nation-state technology competition on connected and autonomous vehicles, responsible AI use in high-conflict scenarios, biosecurity risk assessment, and benchmarking LLM legal reasoning abilities.</p>
-            
-            <p>Currently pursuing a Ph.D. in Computer Science at Michigan State University, Sandler develops methodological approaches for emotion-aware LLMs with enhanced theory of mind capabilities. His doctoral research includes comparative analyses of human versus LLM-generated empathic conversations and pioneering work in affective computing applications.</p>
-            
-            <p>Sandler bridges rigorous policy analysis with cutting-edge AI research to address both technical possibilities and societal implications of emerging technologies in national security contexts.</p>
-        </div>
+        <p>I'm currently doing a PhD in Computer Science at Michigan State University, working on speech processing and natural language processing projects under Professor Arun Ross.</p>
         
-        <div class="research-section">
-            <h2>Research Areas</h2>
-            
-            <div class="research-area">
-                <h3>Emotion-Aware AI & Theory of Mind</h3>
-                <p>Developing methodological approaches for creating LLMs with enhanced theory of mind capabilities that can accurately perceive and respond to human emotional cues. Research includes comparative analyses of human versus LLM-generated empathic conversations and advancing affective computing applications.</p>
-            </div>
-            
-            <div class="research-area">
-                <h3>AI Policy & National Security</h3>
-                <p>Conducting policy analysis on AI applications in defense and homeland security contexts, including responsible AI use in high-conflict scenarios, chemical and biological threat mitigation, and AI-enabled non-proliferation analysis.</p>
-            </div>
-            
-            <div class="research-area">
-                <h3>Technology Competition Analysis</h3>
-                <p>Analyzing nation-state science and technology competition, particularly focusing on connected and autonomous vehicles, and developing frameworks to assess global technological capabilities and competitive dynamics.</p>
-            </div>
-            
-            <div class="research-area">
-                <h3>AI Risk Assessment</h3>
-                <p>Evaluating biosecurity risks posed by AI systems and benchmarking large language model capabilities in legal reasoning and compliance contexts.</p>
-            </div>
-        </div>
+        <p>I'm interested in how technology and policy intersect, and I enjoy building things that work.</p>
+    </div>
+
+    <div class="section">
+        <h2>Current Work</h2>
+        <p>At RAND, I work on various technology policy projects including:</p>
+        <ul class="work-list">
+            <li>AI policy analysis and recommendations</li>
+            <li>Biosecurity technology assessment</li>
+            <li>Autonomous vehicle policy research</li>
+            <li>Technology competition analysis</li>
+        </ul>
         
-        <div class="links">
-            <a href="https://www.rand.org/about/people/s/sandler_morgan.html" target="_blank">RAND Profile</a>
-            <a href="https://scholar.google.com/citations?user=HayqWsIAAAAJ&hl=en" target="_blank">Google Scholar</a>
-            <a href="https://www.linkedin.com/in/morgan-sandler/" target="_blank">LinkedIn</a>
-        </div>
+        <p>For my PhD, I'm exploring problems in speech processing and working on understanding how to make AI systems more helpful for people.</p>
+    </div>
+
+    <div class="section">
+        <h2>Background</h2>
+        <p>I have an M.S. in Computer Science from Michigan State University, where I worked on speaker recognition systems. Before that, I studied computer science and got interested in how technology affects society.</p>
+    </div>
+
+    <div class="links">
+        <a href="https://www.rand.org/about/people/s/sandler_morgan.html">RAND Profile</a>
+        <a href="https://scholar.google.com/citations?user=HayqWsIAAAAJ">Google Scholar</a>
+        <a href="https://linkedin.com/in/morgansandler">LinkedIn</a>
     </div>
 </body>
 </html>
