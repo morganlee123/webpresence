@@ -1,82 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Morgan Sandler</title>
     <style>
+        :root {
+            color-scheme: light dark;
+            --bg: #273244;
+            --bg-end: #3e5068;
+            --surface: rgba(20, 29, 42, 0.54);
+            --text: #f8fafc;
+            --muted: #e2e8f0;
+            --heading: #ffffff;
+            --accent: #bfdbfe;
+            --accent-soft: rgba(191, 219, 254, 0.16);
+            --line: rgba(248, 250, 252, 0.22);
+            --shadow: 0 24px 70px rgba(15, 23, 42, 0.24);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            max-width: 940px;
             margin: 0 auto;
-            padding: 40px 20px;
-            color: #333;
-            background-color: #fff;
+            padding: 40px 24px 44px;
+            color: var(--text);
+            background:
+                radial-gradient(circle at top left, var(--accent-soft), transparent 34rem),
+                linear-gradient(135deg, var(--bg), var(--bg-end) 68%);
+            min-height: 100vh;
         }
         
         .header {
-            text-align: center;
-            margin-bottom: 60px;
-            padding-bottom: 30px;
-            border-bottom: 1px solid #eee;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 320px;
+            gap: 28px;
+            align-items: center;
+            margin-bottom: 36px;
+            padding-bottom: 28px;
+            border-bottom: 1px solid var(--line);
         }
         
         h1 {
-            font-size: 2.5em;
-            font-weight: 300;
-            margin-bottom: 10px;
-            color: #2c3e50;
+            font-size: clamp(2.1rem, 5.4vw, 3.7rem);
+            font-weight: 650;
+            letter-spacing: 0;
+            line-height: 1;
+            margin: 0 0 14px;
+            color: var(--heading);
         }
         
         .subtitle {
-            font-size: 1.2em;
-            color: #7f8c8d;
-            margin-bottom: 20px;
+            font-size: 1.12rem;
+            color: var(--muted);
+            margin-bottom: 0;
+            max-width: 34rem;
+        }
+
+        .portrait {
+            width: 320px;
+            aspect-ratio: 2048 / 1463;
+            border-radius: 20px;
+            object-fit: cover;
+            object-position: center;
+            box-shadow: var(--shadow);
+            border: 1px solid rgba(255, 255, 255, 0.5);
         }
         
         .section {
-            margin-bottom: 40px;
+            margin-bottom: 42px;
         }
         
         h2 {
-            font-size: 1.5em;
-            font-weight: 400;
-            color: #34495e;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #3498db;
-            padding-bottom: 5px;
+            font-size: 0.94rem;
+            font-weight: 700;
+            color: var(--heading);
+            margin: 0 0 18px;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
         }
         
         p {
             margin-bottom: 15px;
-            font-size: 1.1em;
+            font-size: 1.08rem;
+        }
+
+        a {
+            color: var(--accent);
+            text-decoration-color: color-mix(in srgb, var(--accent), transparent 55%);
+            text-underline-offset: 3px;
         }
         
         .links {
-            text-align: center;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
             margin-top: 30px;
         }
         
         .links a {
-            color: #3498db;
+            color: var(--accent);
             text-decoration: none;
-            margin: 0 15px;
-            font-weight: 500;
+            font-weight: 650;
+            padding: 10px 16px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            background: var(--surface);
+            backdrop-filter: blur(10px);
         }
         
         .links a:hover {
-            text-decoration: underline;
+            border-color: color-mix(in srgb, var(--accent), transparent 40%);
+            transform: translateY(-1px);
         }
 
         .quote {
-            border-left: 3px solid #bdc3c7;
-            padding: 12px 20px;
+            border-left: 3px solid var(--accent);
+            padding: 16px 22px;
             margin: 40px 0;
-            background-color: #f8f9fa;
-            color: #7f8c8d;
+            background-color: var(--surface);
+            color: var(--muted);
             font-style: italic;
-            font-size: 1em;
+            font-size: 1rem;
+            border-radius: 0 14px 14px 0;
         }
 
         .quote cite {
@@ -84,43 +136,145 @@
             margin-top: 6px;
             font-style: normal;
             font-size: 0.85em;
-            color: #95a5a6;
+            color: var(--muted);
         }
         
         .work-list {
-            margin-left: 20px;
+            margin: 0 0 0 20px;
+            padding: 0;
         }
         
         .work-list li {
             margin-bottom: 8px;
             font-size: 1.05em;
         }
+
+        .theme-toggle {
+            position: fixed;
+            top: 18px;
+            right: 18px;
+            border: 1px solid var(--line);
+            border-radius: 999px;
+            color: var(--text);
+            background: var(--surface);
+            padding: 8px 12px;
+            font: inherit;
+            font-size: 0.92rem;
+            cursor: pointer;
+            box-shadow: 0 10px 30px rgba(36, 44, 54, 0.12);
+            backdrop-filter: blur(10px);
+        }
+
+        .theme-toggle:hover {
+            border-color: color-mix(in srgb, var(--accent), transparent 40%);
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --bg: #0c1118;
+                --bg-end: #141b24;
+                --surface: rgba(21, 29, 40, 0.74);
+                --text: #e6edf3;
+                --muted: #a7b2bd;
+                --heading: #f6f8fb;
+                --accent: #8ab4ff;
+                --accent-soft: rgba(96, 165, 250, 0.16);
+                --line: rgba(230, 237, 243, 0.16);
+                --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+            }
+
+            body {
+                background:
+                    radial-gradient(circle at top left, var(--accent-soft), transparent 34rem),
+                    linear-gradient(135deg, var(--bg), var(--bg-end) 66%);
+            }
+
+            .portrait {
+                border-color: rgba(255, 255, 255, 0.16);
+            }
+        }
+
+        [data-theme="light"] {
+            color-scheme: light;
+            --bg: #273244;
+            --bg-end: #3e5068;
+            --surface: rgba(20, 29, 42, 0.54);
+            --text: #f8fafc;
+            --muted: #e2e8f0;
+            --heading: #ffffff;
+            --accent: #bfdbfe;
+            --accent-soft: rgba(191, 219, 254, 0.16);
+            --line: rgba(248, 250, 252, 0.22);
+            --shadow: 0 24px 70px rgba(15, 23, 42, 0.24);
+        }
+
+        [data-theme="dark"] {
+            color-scheme: dark;
+            --bg: #0c1118;
+            --bg-end: #141b24;
+            --surface: rgba(21, 29, 40, 0.74);
+            --text: #e6edf3;
+            --muted: #a7b2bd;
+            --heading: #f6f8fb;
+            --accent: #8ab4ff;
+            --accent-soft: rgba(96, 165, 250, 0.16);
+            --line: rgba(230, 237, 243, 0.16);
+            --shadow: 0 24px 70px rgba(0, 0, 0, 0.42);
+        }
+
+        [data-theme="dark"] .portrait {
+            border-color: rgba(255, 255, 255, 0.16);
+        }
         
         @media (max-width: 600px) {
             body {
-                padding: 20px 15px;
+                padding: 76px 18px 36px;
+            }
+
+            .header {
+                grid-template-columns: 1fr;
+                gap: 18px;
+                margin-bottom: 34px;
+                padding-bottom: 26px;
             }
             
-            h1 {
-                font-size: 2em;
+            .portrait {
+                width: min(100%, 340px);
+                grid-row: 1;
             }
             
-            .links a {
-                display: block;
-                margin: 10px 0;
+            .links {
+                justify-content: flex-start;
             }
         }
     </style>
+    <script>
+        (() => {
+            try {
+                const savedTheme = localStorage.getItem('theme');
+                if (savedTheme) {
+                    document.documentElement.dataset.theme = savedTheme;
+                }
+            } catch {
+                // Theme persistence is optional; the toggle still works for this page view.
+            }
+        })();
+    </script>
 </head>
 <body>
+    <button class="theme-toggle" type="button" aria-label="Toggle dark mode">Light mode</button>
+
     <div class="header">
-        <h1>Morgan Sandler</h1>
-        <div class="subtitle">Machine Learning Research Scientist</div>
+        <div>
+            <h1>Morgan Sandler</h1>
+            <div class="subtitle">Machine Learning Research Scientist</div>
+        </div>
+        <img class="portrait" src="morgan.webp" alt="Morgan Sandler">
     </div>
 
     <div class="section">
         <h2>About</h2>
-	<p>I’m a Machine Learning Research Scientist at Carnegie Mellon University’s <a href="https://www.sei.cmu.edu">Software Engineering Institute</a>, where I work in the Frontier AI Lab building and evaluating AI systems.</p>
+	<p>I’m a Machine Learning Research Scientist at Carnegie Mellon University’s <a href="https://www.sei.cmu.edu">Software Engineering Institute</a>, a Department of Defense federally funded research and development center, where I work in the Frontier AI Lab building and evaluating AI systems.</p>
 
 	<p>I’m also a PhD student in Computer Science at Michigan State University, where I study audio-visual speech transcription systems which work in multi-speaker settings (i.e., <a href="https://en.wikipedia.org/wiki/Cocktail_party_effect">the cocktail party problem</a>), advised by Professor Arun Ross.</p>
 
@@ -133,7 +287,7 @@
         <ul class="work-list">
             <li>Developing and evaluating large-scale AI systems</li>
             <li>Applying insights from cognitive science to improve ML systems</li>
-            <li>AI security and reliability research</li>
+            <li>Uncertainty quantification for AI security and reliability research</li>
         </ul>
     </div>
 
@@ -148,8 +302,44 @@
     </blockquote>
 
     <div class="links">
+        <a href="mailto:mlsandler@sei.cmu.edu">Email</a>
         <a href="https://scholar.google.com/citations?user=HayqWsIAAAAJ">Google Scholar</a>
         <a href="https://linkedin.com/in/morgan-sandler">LinkedIn</a>
     </div>
+    <script>
+        const themeStorage = {
+            set(value) {
+                try {
+                    localStorage.setItem('theme', value);
+                } catch {
+                    // Ignore storage restrictions in local or private browsing contexts.
+                }
+            }
+        };
+        const themeToggle = document.querySelector('.theme-toggle');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)');
+
+        function activeTheme() {
+            return document.documentElement.dataset.theme || (prefersDark.matches ? 'dark' : 'light');
+        }
+
+        function syncThemeButton() {
+            themeToggle.textContent = activeTheme() === 'dark' ? 'Light mode' : 'Dark mode';
+        }
+
+        themeToggle.addEventListener('click', () => {
+            const nextTheme = activeTheme() === 'dark' ? 'light' : 'dark';
+            document.documentElement.dataset.theme = nextTheme;
+            themeStorage.set(nextTheme);
+            syncThemeButton();
+        });
+
+        if (prefersDark.addEventListener) {
+            prefersDark.addEventListener('change', syncThemeButton);
+        } else {
+            prefersDark.addListener(syncThemeButton);
+        }
+        syncThemeButton();
+    </script>
 </body>
 </html>
